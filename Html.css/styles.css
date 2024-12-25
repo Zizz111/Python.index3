@@ -1,0 +1,173 @@
+/*  стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-details, .event-description, .event-location {
+    flex: 1;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+/* Медиазапросы для адаптации */
+
+/* Для экранов шириной более 1024px */
+@media (min-width: 1024px) {
+    .event-info {
+        flex-direction: row;
+    }
+
+    .event-details, .event-description, .event-location {
+        margin: 20px;
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    p {
+        font-size: 1.25em;
+    }
+}
+
+/* Для экранов шириной от 768px до 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .event-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-details, .event-description, .event-location {
+        margin: 15px;
+        font-size: 1.15em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+}
+
+/* Для экранов шириной менее 768px */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    .event-info {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .event-details, .event-description, .event-location {
+        margin: 10px 0;
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+}
+
+/* Новый блок с картинкой и текстом */
+.image-text-block {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-text {
+    display: flex;
+    height: 300px; /* фиксированная высота */
+}
+
+.text {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполнение блока картинкой без выхода за его пределы */
+    transition: transform 1s ease-in-out;
+}
+
+/* Эффект при наведении */
+.image-text:hover .image img {
+    transform: scale(1.1); /* Увеличение картинки */
+}
+
+.image-text:hover .text {
+    background-color: rgba(192, 183, 28, 0.909); /* Полупрозрачный черный фон */
+    transition: background-color 0.3s ease;
+}
+
+.image-text:hover .image {
+    filter: brightness(0.7); /* Темнение картинки при наведении */
+}
